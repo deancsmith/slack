@@ -38,6 +38,41 @@ class Attachment extends AbstractModel
      *
      * @Serializer\Type("string")
      */
+    private $authorName;
+
+    /**
+     * @var string
+     *
+     * @Serializer\Type("string")
+     */
+    private $authorLink;
+
+    /**
+     * @var string
+     *
+     * @Serializer\Type("string")
+     */
+    private $authorIcon;
+
+    /**
+     * @var string
+     *
+     * @Serializer\Type("string")
+     */
+    private $title;
+
+    /**
+     * @var string
+     *
+     * @Serializer\Type("string")
+     */
+    private $titleLink;
+
+    /**
+     * @var string
+     *
+     * @Serializer\Type("string")
+     */
     private $text;
 
     /**
@@ -91,6 +126,95 @@ class Attachment extends AbstractModel
     public function getPreText()
     {
         return $this->preText;
+    }
+
+    /**
+     * @param string|null $authorName Small text used to display the author's name.
+     */
+    public function setAuthorName($authorName)
+    {
+        $this->authorName = $authorName;
+    }
+
+    /**
+     * @return string|null Small text used to display the author's name.
+     */
+    public function getAuthorName()
+    {
+        return $this->authorName;
+    }
+
+    /**
+     * @param string|null $authorLink A valid URL that will hyperlink the $authorName
+     *                                text. Will only work if $authorName is present.
+     */
+    public function setAuthorLink($authorLink)
+    {
+        $this->authorLink = $authorLink;
+    }
+
+    /**
+     * @return string|null A valid URL that will hyperlink the $authorName text.
+     *                     Will only work if $authorName is present.
+     */
+    public function getAuthorLink()
+    {
+        return $this->authorLink;
+    }
+
+    /**
+     * @param string|null $authorIcon A valid URL that displays a small 16x16px
+     *                                image to the left of the $authorName text.
+     *                                Will only work if $authorName is present.
+     */
+    public function setAuthorIcon($authorIcon)
+    {
+        $this->authorIcon = $authorIcon;
+    }
+
+    /**
+     * @return string|null A valid URL that displays a small 16x16px image to the
+     *                     left of the $authorName text. Will only work if $authorName is present.
+     */
+    public function getAuthorIcon()
+    {
+        return $this->authorIcon;
+    }
+
+    /**
+     * @param string|null $title The $title is displayed as larger, bold text
+     *                           near the top of a message attachment.
+     */
+    public function setTitle($title)
+    {
+        $this->title = $title;
+    }
+
+    /**
+     * @return string|null The $title is displayed as larger, bold text near the
+     *                     top of a message attachment.
+     */
+    public function getTitle()
+    {
+        return $this->title;
+    }
+
+    /**
+     * @param string|null $titleLink By passing a valid URL in the $titleLink parameter
+     *                               (optional), the title text will be hyperlinked.
+     */
+    public function setTitleLink($titleLink)
+    {
+        $this->titleLink = $titleLink;
+    }
+
+    /**
+     * @return string|null By passing a valid URL in the $titleLink parameter (optional),
+     *                     the title text will be hyperlinked.
+     */
+    public function getTitleLink()
+    {
+        return $this->titleLink;
     }
 
     /**
