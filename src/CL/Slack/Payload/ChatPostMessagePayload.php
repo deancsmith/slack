@@ -14,6 +14,7 @@ namespace CL\Slack\Payload;
 use CL\Slack\Model\Attachment;
 use Doctrine\Common\Collections\ArrayCollection;
 use JMS\Serializer\Annotation as Serializer;
+use JMS\Serializer\JsonSerializationVisitor;
 
 /**
  * @author Cas Leentfaar <info@casleentfaar.com>
@@ -88,13 +89,20 @@ class ChatPostMessagePayload extends AbstractPayload
     /**
      * @var ArrayCollection|Attachment[]
      *
-     * @Serializer\Type("ArrayCollection<CL\Slack\Model\Attachment>")
      */
     private $attachments;
 
     public function __construct()
     {
         $this->attachments = new ArrayCollection();
+    }
+
+    /**
+     * @Serializer\PreSerialize
+     */
+    public function serializeAttachments()
+    {
+      $this->attachments = json_encode($this->attachments->toArray());
     }
 
     /**

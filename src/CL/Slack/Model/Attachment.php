@@ -24,70 +24,70 @@ class Attachment extends AbstractModel
      *
      * @Serializer\Type("string")
      */
-    private $fallback;
+    public $fallback;
 
     /**
      * @var string
      *
      * @Serializer\Type("string")
      */
-    private $pretext;
+     public $pretext;
 
     /**
      * @var string
      *
      * @Serializer\Type("string")
      */
-    private $authorName;
+     public $authorName;
 
     /**
      * @var string
      *
      * @Serializer\Type("string")
      */
-    private $authorLink;
+     public $authorLink;
 
     /**
      * @var string
      *
      * @Serializer\Type("string")
      */
-    private $authorIcon;
+     public $authorIcon;
 
     /**
      * @var string
      *
      * @Serializer\Type("string")
      */
-    private $title;
+     public $title;
 
     /**
      * @var string
      *
      * @Serializer\Type("string")
      */
-    private $titleLink;
+     public $titleLink;
 
     /**
      * @var string
      *
      * @Serializer\Type("string")
      */
-    private $text;
+     public $text;
 
     /**
      * @var string
      *
      * @Serializer\Type("string")
      */
-    private $color;
+     public $color;
 
     /**
      * @var array
      *
      * @Serializer\Type("ArrayCollection<string, string>")
      */
-    private $fields;
+     public $fields;
 
     public function __construct()
     {
@@ -113,7 +113,7 @@ class Attachment extends AbstractModel
     }
 
     /**
-     * @param string|null $preText Optional text that should appear above the formatted data.
+     * @param string|null $pretext Optional text that should appear above the formatted data.
      */
     public function setPretext($pretext = null)
     {
