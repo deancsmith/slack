@@ -31,7 +31,7 @@ class Attachment extends AbstractModel
      *
      * @Serializer\Type("string")
      */
-    private $preText;
+    private $pretext;
 
     /**
      * @var string
@@ -115,17 +115,17 @@ class Attachment extends AbstractModel
     /**
      * @param string|null $preText Optional text that should appear above the formatted data.
      */
-    public function setPreText($preText = null)
+    public function setPretext($pretext = null)
     {
-        $this->preText = $preText;
+        $this->pretext = $pretext;
     }
 
     /**
      * @return string|null Optional text that should appear above the formatted data.
      */
-    public function getPreText()
+    public function getPretext()
     {
-        return $this->preText;
+        return $this->pretext;
     }
 
     /**
